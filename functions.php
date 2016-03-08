@@ -81,3 +81,19 @@ function estudiovikingwp_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'estudiovikingwp_content_width', 840 );
 }
 add_action( 'after_setup_theme', 'estudiovikingwp_content_width', 0 );
+
+
+/**
+ * Estúdio Viking WP custom stylesheet URI.
+ *
+ * @since  1.0.0
+ *
+ * @param  string $uri Default URI.
+ * @param  string $dir Stylesheet directory URI.
+ *
+ * @return string      New URI.
+ */
+function estudiovikingwp_stylesheet_uri( $uri, $dir ) {
+	return $dir . '/assets/css/style.css';
+}
+add_filter( 'stylesheet_uri', 'estudiovikingwp_stylesheet_uri', 10, 2 );

@@ -1,0 +1,13 @@
+{
+  "name": "estudiovikingwp",
+  "description": "Tema do Estúdio Viking para WordPress",
+  "version": "1.0.0",
+  "title": "Estúdio Viking WP",
+  "homepage": "https://github.com/estudioviking/estudio-viking-wp",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.0",
+    "load-grunt-tasks": "^3.4.1"
+  }
+}
