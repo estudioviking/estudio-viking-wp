@@ -1,9 +1,11 @@
+/* jshint node:true */
 module.exports = function( grunt ) {
+	'use strict';
 
 	// Load All Grunt Plugins
 	require( 'load-grunt-tasks' )( grunt );
 
-	var estudiovikingwpConfig = {
+	var evwpConfig = {
 		// Gets the Package Vars
 		pkg: grunt.file.readJSON( 'package.json' ),
 
@@ -14,7 +16,18 @@ module.exports = function( grunt ) {
 			sass: '../assets/sass'
 		},
 
-		// Uglify to concat and minify
+		// JavaScript Linting with JSHint
+		jshint: {
+			options: {
+				jshintrc: '<%= dirs.js %>/.jshintrc'
+			},
+			all: [
+				'Gruntfile.js',
+				'<%= dirs.js %>/main.js'
+			]
+		},
+
+		// Uglify to Concat and Minify
 		uglify: {
 			bootstrap: {
 				files: {
@@ -31,6 +44,14 @@ module.exports = function( grunt ) {
 						'<%= dirs.js %>/bootstrap/scrollspy.js',
 						'<%= dirs.js %>/bootstrap/tab.js',
 						'<%= dirs.js %>/bootstrap/affix.js'
+					]
+				}
+			},
+			dist: {
+				files: {
+					'<%= dirs.js %>/main.min.js': [
+						'<%= dirs.js %>/libs/*.js',		// External libs/plugins
+						'<%= dirs.js %>/main.js'		// Custom JavaScript
 					]
 				}
 			}
@@ -51,13 +72,49 @@ module.exports = function( grunt ) {
 					ext: '.css'
 				}]
 			}
-		} // SASS
+		}, // SASS
+
+		// Watch for Changes and Trigger SASS, JSHint, Uglify and Livereload browser
+		watch: {
+			sass: {
+				files: [
+					'<%= dirs.sass %>/**'
+				],
+				tasks: ['sass']
+			},
+			js: {
+				files: [
+					'<%= jshint.all %>'
+				],
+				tasks: ['jshint', 'uglify']
+			},
+			livereload: {
+				options: {
+					livereload: true
+				},
+				files: [
+					'<%= dirs.css %>/*.css',
+					'<%= dirs.js %>/*.js',
+					'../**/*.php'
+				]
+			},
+			options: {
+				spawn: false
+			}
+		}
 	};
 
 	// Initialize Grunt Config
-	grunt.initConfig( estudiovikingwpConfig );
+	grunt.initConfig( evwpConfig );
 
 	// Default Task
-	grunt.registerTask( 'default', [ 'uglify', 'sass' ]); 
+	grunt.registerTask( 'default', [
+		'jshint',
+		'sass',
+		'uglify'
+	]);
+
+	// Short Aliases
+	grunt.registerTask( 'w', ['watch'] );
 
 };

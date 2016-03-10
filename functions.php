@@ -29,10 +29,10 @@
  * Default theme constants
  * ----------------------------------------------------------------------------
  */
-define( 'ID_THEME_NAME', 'estudiovikingwp' );
+define( 'ID_THEME_NAME', 'evwp' );
 
 
-if ( ! function_exists( 'estudiovikingwp_setup' ) ) :
+if ( ! function_exists( 'evwp_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -40,18 +40,18 @@ if ( ! function_exists( 'estudiovikingwp_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * Create your own estudiovikingwp_setup() function to override in a child theme.
+ * Create your own evwp_setup() function to override in a child theme.
  *
  * @since 1.0.0
  */
-function estudiovikingwp_setup() {
+function evwp_setup() {
 	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Estúdio Viking WP, change 'estudiovikingwp'
+	 * If you're building a theme based on Estúdio Viking WP, change 'evwp'
 	 * in 'ID_THEME_NAME' constant value to the name of your theme.
 	 */
-	 load_theme_textdomain( ID_THEME_NAME, get_template_directory() . '/languages' );
+    load_theme_textdomain( ID_THEME_NAME, get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -63,9 +63,23 @@ function estudiovikingwp_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+
+	/**
+	 * Enable support for Post Thumbnails on posts and pages.
+	 * 
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
+	add_theme_support( 'post-thumbnails' );
+	//set_post_thumbnail_size( 1200, 9999 );
+
+	// This theme uses wp_nav_menu() in two locations.
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'twentysixteen' ),
+		'social'  => __( 'Social Links Menu', 'twentysixteen' ),
+	) );
 }
-endif; // estudiovikingwp_setup
-add_action( 'after_setup_theme', 'estudiovikingwp_setup' );
+endif; // evwp_setup
+add_action( 'after_setup_theme', 'evwp_setup' );
 
 
 /**
@@ -77,10 +91,10 @@ add_action( 'after_setup_theme', 'estudiovikingwp_setup' );
  *
  * @since 1.0.0
  */
-function estudiovikingwp_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'estudiovikingwp_content_width', 840 );
+function evwp_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'evwp_content_width', 840 );
 }
-add_action( 'after_setup_theme', 'estudiovikingwp_content_width', 0 );
+add_action( 'after_setup_theme', 'evwp_content_width', 0 );
 
 
 /**
@@ -93,7 +107,7 @@ add_action( 'after_setup_theme', 'estudiovikingwp_content_width', 0 );
  *
  * @return string      New URI.
  */
-function estudiovikingwp_stylesheet_uri( $uri, $dir ) {
+function evwp_stylesheet_uri( $uri, $dir ) {
 	return $dir . '/assets/css/style.css';
 }
-add_filter( 'stylesheet_uri', 'estudiovikingwp_stylesheet_uri', 10, 2 );
+add_filter( 'stylesheet_uri', 'evwp_stylesheet_uri', 10, 2 );
