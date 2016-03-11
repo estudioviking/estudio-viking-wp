@@ -156,32 +156,32 @@ function evwp_widgets_init() {
 		'after_title'	=> '</h3>',
 		'after_widget'	=> '</section>'
 	);
-
+/*
 	// Define Sidebar.
 	register_sidebar( wp_parse_args( array(
 		'name'          => __( 'Sidebar', ID_THEME_NAME ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', ID_THEME_NAME )
 	), $defaults ) );
-
+*/
 	// Define Content Bottom 1.
 	register_sidebar( wp_parse_args( array(
 		'name'          => __( 'Content Bottom 1', ID_THEME_NAME ),
-		'id'            => 'sidebar-2',
+		'id'            => 'sidebar-1',
 		'description'   => __( 'Appears at the bottom of the content on posts and pages.', ID_THEME_NAME )
 	), $defaults ) );
 
 	// Define Content Bottom 2.
 	register_sidebar( wp_parse_args( array(
 		'name'          => __( 'Content Bottom 2', ID_THEME_NAME ),
-		'id'            => 'sidebar-3',
+		'id'            => 'sidebar-2',
 		'description'   => __( 'Appears at the bottom of the content on posts and pages.', ID_THEME_NAME )
 	), $defaults ) );
 
 	// Define Content Bottom 3.
 	register_sidebar( wp_parse_args( array(
 		'name'          => __( 'Content Bottom 3', ID_THEME_NAME ),
-		'id'            => 'sidebar-4',
+		'id'            => 'sidebar-3',
 		'description'   => __( 'Appears at the bottom of the content on posts and pages.', ID_THEME_NAME )
 	), $defaults ) );
 }

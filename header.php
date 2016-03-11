@@ -66,8 +66,6 @@
 						'walker'			=> new ID_WP_Bootstrap_Nav_Walker()
 					) );
 					echo '<!-- #header-menu -->';
-					
-					//issimple_content_search_form( 'navbar', 'navbar-form navbar-right' );
 				?>
 				<form id="navbar-search-form" class="navbar-form navbar-right" method="get" action="<?php echo home_url( '/' ); ?>" role="search">
 					<div class="form-group">
@@ -86,4 +84,4 @@
 		</header><!-- #header -->
 	</nav><!-- #nav-header -->
 
-	<div id="content" class="site-content container"><div class="row">
+	<div id="content" class="site-content">

@@ -1,16 +1,15 @@
 <?php
 /**
- * Template part for displaying posts.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
+ * The template part for displaying content
+ * 
  * @package Estudio_Viking_WP
+ * @since 1.0.0
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header container">
 		<?php
 			if ( is_single() ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -26,7 +25,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content container">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
@@ -41,7 +40,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer container">
 		<?php //estudiovikingwpentry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -1,28 +1,27 @@
 jQuery(document).ready(function($) {
-	//var $window, $body, $wpadminbar, $navbar_header;
 	var	$window			= $( window ),
 		$body			= $( document.body ),
 		$wpadminbar		= $( '#wpadminbar' ).first(),
-		$navbar_header	= $( '#nav-header.navbar-fixed-top' ).first();
+		$navbar_header	= $( '#nav-header' ).first();
 
 	// Fix Navbar Header with WP Admin Bar
-	function navbar_resize() {
+	function navbar_fix() {
 		if ( $navbar_header.hasClass( 'navbar-fixed-top' ) ) {
 			if ( $wpadminbar.height() ) {
-				$navbar_header.attr( 'style', 'top: ' + $wpadminbar.height() + 'px;' );
+				$navbar_header.attr( 'style', 'top: ' + $wpadminbar.outerHeight() + 'px;' );
 
 				if ( 600 >= $window.width() ) {
-					$navbar_header.attr( 'style', 'top: ' + $wpadminbar.height() + 'px;' );
+					$navbar_header.attr( 'style', 'top: ' + $wpadminbar.outerHeight() + 'px;' );
 				}
 			}
 
-			$body.attr( 'style', 'padding-top: ' + ( $navbar_header.height() ) + 'px;' );
+			$body.attr( 'style', 'padding-top: ' + ( $navbar_header.outerHeight() ) + 'px;' );
 		}
 	}
 
 	// Fix Nav Header
-	navbar_resize();
-	$window.resize( navbar_resize );
+	navbar_fix();
+	$window.resize( navbar_fix );
 
 	// Tabs.
 	$( '.evwp-tabs a' ).click(function(e) {
