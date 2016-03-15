@@ -240,6 +240,11 @@ function evwp_stylesheet_uri( $uri, $dir ) {
 add_filter( 'stylesheet_uri', 'evwp_stylesheet_uri', 10, 2 );
 
 /**
- * Customizer additions.
+ * Required files.
  */
+// Utilities.
+require get_template_directory() . '/core/utilities.php';
+// WP Bootstrap Functions.
+require get_template_directory() . '/core/wpbs-functions.php';
+// Customizer additions.
 require get_template_directory() . '/inc/customizer.php';

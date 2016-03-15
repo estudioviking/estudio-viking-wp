@@ -29,7 +29,7 @@
 						if ( is_active_sidebar( 'sidebar-1' ) ) :
 							dynamic_sidebar( 'sidebar-1' );
 						else :
-							the_widget( 'WP_Widget_Calendar', array(), $defaults );
+							the_widget( 'WP_Widget_Recent_Posts', array(), $defaults );
 						endif;
 					?>
 				</div><!-- #sidebar-1 -->

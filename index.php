@@ -39,20 +39,15 @@ get_header(); ?>
 
 				// End the loop.
 				endwhile;
-				?>
 
-				<div class="container">
-					<?php
-					// Previous/next page navigation.
-					the_posts_pagination( array(
-						'prev_text'          => __( 'Previous page', ID_THEME_NAME ),
-						'next_text'          => __( 'Next page', ID_THEME_NAME ),
-						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', ID_THEME_NAME ) . ' </span>',
-					) );
-					?>
-				</div>
+				// Previous/next page navigation.
+				wpbs_pagination_links( array(
+					'type'				=> 'pager',
+					'container_id'		=> 'posts-pagination',
+					'container_class'	=> 'container',
+					'paginate_content'	=> 'posts'
+				) );
 
-			<?php
 			// If no content, include the "No posts found" template.
 			else :
 				get_template_part( 'template-parts/content', 'none' );
