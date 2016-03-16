@@ -285,7 +285,7 @@ function wpbs_navigation_markup( $links, $args = array() ) {
 	$output = '';
 	
 	if ( ! empty( $args['screen_reader_text'] ) )
-		$output .= '<h2 class="sr-only sr-only-focusable">' . $args['screen_reader_text'] . '</h2>' . $links;
+		$output .= '<h3 class="sr-only sr-only-focusable">' . $args['screen_reader_text'] . '</h2>' . $links;
 	
 	if ( false !== $args['div_class'] ) {
 		$div_class = array();
@@ -459,3 +459,15 @@ function wpbs_make_btn_comment_reply_link( $link, $args, $comment, $post ) {
 }
 add_filter( 'comment_reply_link', 'wpbs_make_btn_comment_reply_link', 10, 4 );
 
+
+
+function add_list_tag_to_link_pages_link( $link, $i ) {
+	global $page, $numpages, $multipage, $more;
+
+	$before = ( $i == $page ) ? '<li class="active"><span class="active">' : '<li>';
+	$after = ( $i == $page ) ? '</span></li>' : '</li>';
+	$link = $before . $link . $after;
+
+	return $link;
+}
+add_filter( 'wp_link_pages_link', 'add_list_tag_to_link_pages_link', 10, 2 );

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Estúdio Viking WP 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2016-03-16 16:36-0300\n"
-"PO-Revision-Date: 2016-03-16 16:37-0300\n"
+"PO-Revision-Date: 2016-03-16 16:47-0300\n"
 "Last-Translator: \n"
 "Language-Team: ID WordPress <ivanildodiasdesigner@gmail.com>\n"
 "Language: pt_BR\n"
@@ -23,136 +23,136 @@ msgstr ""
 
 #: ../core/classes/class-bootstrap-nav.php:198
 msgid "Add a menu"
-msgstr ""
+msgstr "Adicionar um menu"
 
 #: ../core/wpbs-functions.php:68
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: ../core/wpbs-functions.php:69
 msgid "Next"
-msgstr ""
+msgstr "Próximo"
 
 #: ../core/wpbs-functions.php:77
 msgid "Page"
-msgstr ""
+msgstr "Página"
 
 #: ../core/wpbs-functions.php:115 ../core/wpbs-functions.php:117
 msgid "Previous page"
-msgstr ""
+msgstr "Página anterior"
 
 #: ../core/wpbs-functions.php:135
 #, php-format
 msgid "<a href=\"%1$s\" title=\"Go to page %2$d\">%3$s%2$d%4$s</a>"
-msgstr ""
+msgstr "<a href=\"%1$s\" title=\"Ir para a página %2$d\">%3$s%2$d%4$s</a>"
 
 #: ../core/wpbs-functions.php:140
 msgid "&hellip;"
-msgstr ""
+msgstr "&hellip"
 
 #: ../core/wpbs-functions.php:155 ../core/wpbs-functions.php:157
 msgid "Next page"
-msgstr ""
+msgstr "Próxima página"
 
 #: ../core/wpbs-functions.php:239
 msgid "Comments navigation"
-msgstr ""
+msgstr "Navegação de comentários"
 
 #: ../core/wpbs-functions.php:282 ../core/wpbs-functions.php:337
 msgid "Posts navigation"
-msgstr ""
+msgstr "Navegação de postagens"
 
 #: ../core/wpbs-functions.php:395
 msgid "Pingback:"
-msgstr ""
+msgstr "Pingback:"
 
 #: ../core/wpbs-functions.php:395 ../core/wpbs-functions.php:423
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: ../core/wpbs-functions.php:413
 msgid "In"
-msgstr ""
+msgstr "Em"
 
 #: ../core/wpbs-functions.php:418
 msgid "at"
-msgstr ""
+msgstr "às"
 
 #: ../core/wpbs-functions.php:420
 msgid "<span class=\"says\">said:</span>"
-msgstr ""
+msgstr "<span class=\"says\">disse:</span>"
 
 #: ../core/wpbs-functions.php:428
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Seu comentário está aguardando moderação."
 
 #: ../core/wpbs-functions.php:437
 msgid "Respond"
-msgstr ""
+msgstr "Responder"
 
 #: ../footer.php:68
 msgid "Powered by"
-msgstr ""
+msgstr "Desenvolvido por"
 
 #: ../footer.php:72
 msgid "on"
-msgstr ""
+msgstr "em"
 
 # @ _s
 #: ../functions.php:86
 msgid "Primary Menu"
-msgstr ""
+msgstr "Menu Principal"
 
 #: ../functions.php:87
 msgid "Social Links Menu"
-msgstr ""
+msgstr "Menu de Links Sociais"
 
 #: ../functions.php:169
 msgid "Content Bottom 1"
-msgstr ""
+msgstr "Conteúdo do Rodapé 1"
 
 #: ../functions.php:171 ../functions.php:178 ../functions.php:185
 msgid "Appears at the bottom of the content on posts and pages."
-msgstr ""
+msgstr "Aparece na parte inferior do conteúdo em posts e páginas."
 
 #: ../functions.php:176
 msgid "Content Bottom 2"
-msgstr ""
+msgstr "Conteúdo do Rodapé 2"
 
 #: ../functions.php:183
 msgid "Content Bottom 3"
-msgstr ""
+msgstr "Conteúdo do Rodapé 3"
 
 # @ _s
 #: ../header.php:30 ../header.php:32
 msgid "Skip to content"
-msgstr ""
+msgstr "Pular para o conteúdo"
 
 #: ../header.php:40
 msgid "Click on the button to display the menu."
-msgstr ""
+msgstr "Clique no botão para exibir o menu."
 
 #: ../header.php:48
 msgid "Go to home page?"
-msgstr ""
+msgstr "Ir para página principal?"
 
 #: ../header.php:72 ../header.php:74 ../header.php:77
 msgid "Search"
-msgstr ""
+msgstr "Pesquisar"
 
 # @ _s
 #: ../search.php:19
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Resultados da pesquisa para: %s"
 
 # @ _s
 #: ../template-parts/content.php:32
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Continue lendo %s <span class=\"meta-nav\">&rarr;</span>"
 
 # @ _s
 #: ../template-parts/content.php:37
 msgid "Pages:"
-msgstr ""
+msgstr "Páginas:"

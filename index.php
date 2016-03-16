@@ -45,7 +45,8 @@ get_header(); ?>
 					'type'				=> 'pager',
 					'container_id'		=> 'posts-pagination',
 					'container_class'	=> 'container',
-					'paginate_content'	=> 'posts'
+					'paginate_content'	=> 'posts',
+					'div_class'			=> false
 				) );
 
 			// If no content, include the "No posts found" template.

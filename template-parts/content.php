@@ -32,12 +32,16 @@
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'estudio-viking-wp' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'estudio-viking-wp' ),
-				'after'  => '</div>',
-			) );
 		?>
+
+		<div class="page-links">
+			<?php
+				wp_link_pages( array(
+					'before' => '<ul class="pager"><li class="disabled"><span class="page-links-title">' . esc_html__( 'Pages:', ID_THEME_NAME ) . '</span></li>',
+					'after'  => '</ul>',
+				) );
+			?>
+		</div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer container">
