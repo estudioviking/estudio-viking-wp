@@ -4,7 +4,7 @@
  *
  * @package ID WordPress
  * @category Utilities
- * @since 1.0.0
+ * @version 1.0.0
  */
 
 
@@ -131,6 +131,52 @@ function get_post_thumbnail_meta( $thumb_id, $meta ) {
 	
 	return $thumb[$meta];
 }
+
+
+/**
+ * Returns date as link
+ *
+ * @since 1.0.0
+ */
+function id_date_link( $sep = null, $echo = true ) {
+	$sep		= ( empty( $sep ) ) ? __( 'of' ) : $sep;
+	$str_title	= __( 'Posts of %s', ID_THEME_NAME );
+	$link_str	= '<a href="%s" title="%s" rel="bookmark">%s</a>';
+
+	$y			= get_the_time( 'Y' );
+	$y_title	= esc_attr( sprintf( $str_title, $y ) );
+	$y_link		= sprintf( $link_str, get_year_link( $y ), $y_title, $y );
+
+	$m			= get_the_time( 'm' );
+	$m_name		= ucfirst( get_the_time( 'F' ) );
+	$m_title	= esc_attr( sprintf( $str_title, get_the_time( 'F \d\e Y' ) ) );
+	$m_link		= sprintf( $link_str, get_month_link( $y, $m ), $m_title, $m_name );
+
+	$d			= get_the_time( 'd' );
+	$d_title	= esc_attr( sprintf( $str_title, get_the_time( get_option( 'date_format' ) ) ) );
+	$d_link		= sprintf( $link_str, get_day_link( $y, $m, $d ), $d_title, $d );
+
+	$time_title		= esc_attr( get_the_time( 'l, ' . get_option( 'date_format' ) . ', '. get_option( 'time_format' ) ) );
+	$time_datetime	= esc_attr( get_the_date( 'c' ) );
+
+	$output  = sprintf( '<time class="entry-date published updated" title="%s" datetime="%s">' , $time_title, $time_datetime );
+	$output .= sprintf( __( '%1$s %4$s %2$s %4$s %3$s' ), $d_link, $m_link, $y_link, $sep );
+	$output .= '</time>';
+
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$output .= sprintf( '<time class="updated hidden" datetime="%s">%s</time>',
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+	}
+
+	if ( $echo ) {
+		echo $output;
+	} else {
+		return $output;
+	}
+}
+
 
 
 /**
