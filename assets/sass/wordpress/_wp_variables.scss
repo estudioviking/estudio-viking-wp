@@ -1,0 +1,13 @@
+// ----------------------------------------------------------------------------
+// Core WP Variables
+// ----------------------------------------------------------------------------
+
+
+// WordPress Admin Bar --------------------------------------------------------
+$wpadminbar-md-screen:		782px !default;
+$wpadminbar-sm-screen:		600px !default;
+$wpadminbar-xs-screen:		400px !default;
+
+$wpadminbar-md-screen-max:		($wpadminbar-md-screen - 1) !default;
+$wpadminbar-sm-screen-max:		($wpadminbar-sm-screen - 1) !default;
+$wpadminbar-xs-screen-max:		($wpadminbar-xs-screen - 1) !default;

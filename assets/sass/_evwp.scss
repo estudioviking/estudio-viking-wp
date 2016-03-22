@@ -3,21 +3,11 @@
 // ----------------------------------------------------------------------------
 
 
-// Variables
-// ----------------------------------------------------------------------------
-$wpadminbar-md-screen:		782px !default;
-$wpadminbar-sm-screen:		600px !default;
-$wpadminbar-xs-screen:		400px !default;
-
-$wpadminbar-md-screen-max:		($wpadminbar-md-screen - 1) !default;
-$wpadminbar-sm-screen-max:		($wpadminbar-sm-screen - 1) !default;
-$wpadminbar-xs-screen-max:		($wpadminbar-xs-screen - 1) !default;
-
+// Variables ------------------------------------------------------------------
 $padding-inc:								10px !default;
 
 
-// Header Navigation
-// ----------------------------------------------------------------------------
+// Header Navigation ----------------------------------------------------------
 #nav-header {
   @media (min-width: $wpadminbar-md-screen) {
 		padding-bottom: $padding-inc;
@@ -30,8 +20,7 @@ $padding-inc:								10px !default;
 }
 
 
-// Copyright Text
-// ----------------------------------------------------------------------------
+// Copyright Text -------------------------------------------------------------
 #copyright {
 	margin-top: $padding-inc;
 	margin-bottom: $padding-inc;
