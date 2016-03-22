@@ -18,10 +18,8 @@
 					the_title( '<h3 class="entry-title h1"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 				endif;
 
-				if ( 'post' === get_post_type() ) : ?>
-					<div class="entry-meta">
-						<?php evwp_posted_on(); ?>
-					</div><!-- .entry-meta --><?php
+				if ( 'post' === get_post_type() ) :
+					evwp_posted_on();
 				endif;
 			?>
 		</div><!-- .entry-header-container -->

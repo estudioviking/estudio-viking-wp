@@ -4,24 +4,43 @@
 
 
 // Variables ------------------------------------------------------------------
-$padding-inc:								10px !default;
+$spacing-inc:								10px !default;
 
 
 // Header Navigation ----------------------------------------------------------
 #nav-header {
+
   @media (min-width: $wpadminbar-md-screen) {
-		padding-bottom: $padding-inc;
-		padding-top: $padding-inc;
+		padding-bottom: $spacing-inc;
+		padding-top: $spacing-inc;
   }
 
 	@media (max-width: $wpadminbar-sm-screen-max) {
 		position: absolute;
   }
+
+}
+
+
+// Entry-meta -----------------------------------------------------------------
+.entry-meta{
+
+	> * {
+		margin-right: $spacing-inc;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.glyphicon {
+		margin-right: $spacing-inc;
+	}
+
 }
 
 
 // Copyright Text -------------------------------------------------------------
 #copyright {
-	margin-top: $padding-inc;
-	margin-bottom: $padding-inc;
+	margin-top: $spacing-inc;
+	margin-bottom: $spacing-inc;
 }
