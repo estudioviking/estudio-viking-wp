@@ -10,7 +10,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<div class="entry-header-container container">
+		<div class="container">
 			<?php
 				if ( is_singular() ) :
 					the_title( '<h1 class="entry-title">', '</h1>' );
@@ -22,29 +22,35 @@
 					evwp_posted_on();
 				endif;
 			?>
-		</div><!-- .entry-header-container -->
+		</div>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content container">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'estudio-viking-wp' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+	<?php evwp_excerpt(); ?>
 
-		<div class="page-links">
+	<div class="entry-content">
+		<div class="container">
 			<?php
-				wp_link_pages( array(
-					'before' => '<ul class="pager"><li class="disabled"><span class="page-links-title">' . esc_html__( 'Pages:', ID_THEME_NAME ) . '</span></li>',
-					'after'  => '</ul>',
+				the_content( sprintf(
+					/* translators: %s: Name of current post. */
+					__( 'Continue reading', ID_THEME_NAME ) . ' %s <span class="meta-nav">&hellip;</span>',
+					the_title( '<span class="sr-only sr-only-focusable">"', '"</span>', false )
 				) );
 			?>
+	
+			<div class="page-links">
+				<?php
+					wp_link_pages( array(
+						'before' => '<ul class="pager"><li class="disabled"><span class="page-links-title">' . esc_html__( 'Pages:', ID_THEME_NAME ) . '</span></li>',
+						'after'  => '</ul>',
+					) );
+				?>
+			</div>
 		</div>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer container">
-		<?php evwp_entry_footer(); ?>
+	<footer class="entry-footer">
+		<div class="container">
+			<?php evwp_entry_footer(); ?>
+		</div>
 	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+</article><!-- #post-<?php the_ID(); ?> -->

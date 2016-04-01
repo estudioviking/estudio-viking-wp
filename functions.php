@@ -136,7 +136,7 @@ add_action( 'after_setup_theme', 'evwp_setup' );
  * @since 1.0.0
  */
 function evwp_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'evwp_content_width', 877.5 );
+	$GLOBALS['content_width'] = apply_filters( 'evwp_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'evwp_content_width', 0 );
 
@@ -156,14 +156,7 @@ function evwp_widgets_init() {
 		'after_title'	=> '</h3>',
 		'after_widget'	=> '</section>'
 	);
-/*
-	// Define Sidebar.
-	register_sidebar( wp_parse_args( array(
-		'name'          => __( 'Sidebar', ID_THEME_NAME ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', ID_THEME_NAME )
-	), $defaults ) );
-*/
+
 	// Define Content Bottom 1.
 	register_sidebar( wp_parse_args( array(
 		'name'          => __( 'Content Bottom 1', ID_THEME_NAME ),
@@ -214,7 +207,7 @@ function evwp_scripts() {
 	}
 
 	// Load Skip Link normalizer.
-	wp_enqueue_script( 'evwp-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20150310', true );
+	wp_enqueue_script( 'evwp-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), null, true );
 
 	// Load thread comments WordPress script.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

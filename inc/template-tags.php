@@ -64,13 +64,62 @@ function evwp_posted_on() {
 ?>
 	<p class="entry-meta">
 		<span class="entry-author"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><?php the_author_posts_link(); ?></span>
-		<span class="entry-categ"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><?php the_category( ', ' ); ?></span> 
 		<span class="entry-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><?php id_date_link(); ?></span>
+		<span class="entry-categ"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><?php the_category( ', ' ); ?></span>
 		<span class="entry-comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><?php evwp_comments_link(); ?></span>
 		<?php evwp_edit_link( 'post' ); ?>
 	</p><!-- .entry-meta -->
 <?php
 }
+endif;
+
+
+if ( ! function_exists( 'evwp_excerpt' ) ) :
+/**
+ * Displays the optional excerpt.
+ *
+ * Wraps the excerpt in a div element.
+ *
+ * Create your own evwp_excerpt() function to override in a child theme.
+ *
+ * @since 1.0.0
+ *
+ * @param string $class Optional. Class string of the div element. Defaults to 'entry-summary'.
+ */
+function evwp_excerpt( $class = 'entry-summary' ) {
+	$class = esc_attr( $class );
+
+	if ( has_excerpt() || is_search() ) : ?>
+		<div class="<?php echo $class; ?>">
+			<div class="container">
+				<?php the_excerpt(); ?>
+			</div>
+		</div><!-- .<?php echo $class; ?> -->
+	<?php endif;
+}
+endif;
+
+
+if ( ! function_exists( 'evwp_excerpt_more' ) && ! is_admin() ) :
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with ... and
+ * a 'Continue reading' link.
+ *
+ * Create your own evwp_excerpt_more() function to override in a child theme.
+ *
+ * @since 1.0.0
+ *
+ * @return string 'Continue reading' link prepended with an ellipsis.
+ */
+function evwp_excerpt_more() {
+	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: %s: Name of current post */
+		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ), get_the_title( get_the_ID() ) )
+	);
+	return ' &hellip; ' . $link;
+}
+add_filter( 'excerpt_more', 'evwp_excerpt_more' );
 endif;
 
 
