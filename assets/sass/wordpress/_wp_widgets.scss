@@ -1,0 +1,24 @@
+// ----------------------------------------------------------------------------
+// Core WP Default Widgets
+// ----------------------------------------------------------------------------
+
+
+// Calendar -------------------------------------------------------------------
+.widget_calendar #wp-calendar {
+    @extend .table;
+    @extend .table-condensed;
+    @extend .table-striped;
+    @extend .table-responsive;
+    & caption {
+    	@include .text-center;
+    }
+}
+
+
+// List Widgets ---------------------------------------------------------------
+.widget ul {
+	@extend .list-group;
+	& li {
+		@extend .list-group-item;
+	}
+}

@@ -6,11 +6,12 @@
  * Version: 1.0.0
  */
 
+
 @import
-  "bootstrap/bootstrap",				// Bootstrap           Styles Core
+  "bootstrap",									// Bootstrap           Styles Core
   "font-awesome/font-awesome",	// Font Awesome        Styles Core
-  "wordpress/wordpress",				// WordPress       		 Styles Core
+  "wordpress",									// WordPress       		 Styles Core
   //"underscore/underscore",			// Underscore          Styles Core
-  "core/core",									// ID   							 Styles Core
+  "core",												// ID   							 Styles Core
   "evwp"												// Estudio Viking WP	 Theme Styles
 ;
