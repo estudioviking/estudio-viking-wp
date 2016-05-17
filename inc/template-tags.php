@@ -63,11 +63,13 @@ if ( ! function_exists( 'evwp_posted_on' ) ) :
 function evwp_posted_on() {
 ?>
 	<p class="entry-meta">
+		<small>
 		<span class="entry-author"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><?php the_author_posts_link(); ?></span>
 		<span class="entry-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><?php id_date_link(); ?></span>
 		<span class="entry-categ"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><?php the_category( ', ' ); ?></span>
 		<span class="entry-comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><?php evwp_comments_link(); ?></span>
 		<?php evwp_edit_link( 'post' ); ?>
+		</small>
 	</p><!-- .entry-meta -->
 <?php
 }

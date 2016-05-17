@@ -10,7 +10,7 @@
     @extend .table-striped;
     @extend .table-responsive;
     & caption {
-    	@include .text-center;
+    	@extend .text-center;
     }
 }
 

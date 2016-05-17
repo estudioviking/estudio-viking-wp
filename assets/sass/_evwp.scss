@@ -20,8 +20,9 @@
 
 // Entry-meta -----------------------------------------------------------------
 .entry-meta{
+	color: $gray-light;
 
-	> * {
+	small > * {
 		margin-right: $spacing-inc;
 		&:last-child {
 			margin-right: 0;
@@ -30,6 +31,14 @@
 
 	.glyphicon {
 		margin-right: $spacing-inc;
+	}
+
+	a {
+		color: $gray-light;
+		&:hover,
+		&:focus {
+			color: $gray-dark;
+		}
 	}
 
 }
