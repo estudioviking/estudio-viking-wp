@@ -3,12 +3,18 @@
 // ----------------------------------------------------------------------------
 
 
+// Images ---------------------------------------------------------------------
+img {
+	max-width: 100%;
+}
+
+
 // Header Navigation ----------------------------------------------------------
 #nav-header {
 
   @media (min-width: $wpadminbar-md-screen) {
-		padding-bottom: $spacing-inc;
-		padding-top: $spacing-inc;
+		//padding-bottom: $spacing-inc;
+		//padding-top: $spacing-inc;
   }
 
 	@media (max-width: $wpadminbar-sm-screen-max) {

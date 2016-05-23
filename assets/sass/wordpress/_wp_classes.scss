@@ -8,3 +8,24 @@
 	@extend .sr-only;
 	@extend .sr-only-focusable;
 }
+
+
+// Media Alignments -----------------------------------------------------------
+.alignnone {
+    margin: 0.5em 0;
+}
+
+.alignright {
+    @extend .pull-right;
+    margin: 0.5em 0 1em 1em;
+}
+
+.alignleft {
+    @extend .pull-left;
+    margin: 0.5em 1em 1em 0;
+}
+
+.aligncenter {
+    @extend .center-block;
+    margin: 0.5em auto;
+}
