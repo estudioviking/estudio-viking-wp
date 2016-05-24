@@ -1,0 +1,74 @@
+// ----------------------------------------------------------------------------
+// Core WP Default Images
+// ----------------------------------------------------------------------------
+
+
+.hentry,
+.widget {
+    img {
+        height: auto;
+        max-width: 100%;
+        width: auto;
+    }
+}
+
+img {
+    &.header-image,
+    &.wp-post-image {
+        max-width: 100%;
+        height: auto;
+    }
+    &.wp-smiley, .rsswidget & {
+        border: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 0;
+    }
+    // Remove WP.com Stats smile :)
+    &#wpstats {
+        display: none;
+    }
+    .comment-content &,
+    .widget & {
+        @extend .img-responsive;
+    }
+}
+
+.entry-content p img,
+.wp-caption {
+    @extend .img-responsive;
+    &.alignleft,
+    &.alignright,
+    &.aligncenter,
+    &.alignnone {
+        margin-top: $spacing-inc;
+        margin-bottom: $line-height-computed;
+    }
+}
+
+.wp-caption {
+    @extend .thumbnail;
+    &.aligncenter,
+    &.alignnone {
+        clear: both !important;
+    }
+    .wp-caption-text {
+        display: inline-block;
+        padding: $thumbnail-caption-padding;
+        color: $thumbnail-caption-color;
+        &:before {
+            color: #666;
+            content: '\2014';
+            font-size: 12px;
+            font-style: normal;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+    }
+}

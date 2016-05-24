@@ -29,7 +29,7 @@ function evwp_edit_link( $type, $tag = 'span' ) {
 		if ( $type = 'post' ) {
 			edit_post_link(
 				__( 'Edit', ID_THEME_NAME ),
-				'<' . $tag . ' class="edit-link"><span class="glyphicon glyphicon-pencil"></span> ',
+				'<' . $tag . ' class="edit-link"><span class="glyphicon glyphicon-pencil"></span>',
 				'</' . $tag . '>'
 			);
 		}
@@ -62,14 +62,12 @@ if ( ! function_exists( 'evwp_posted_on' ) ) :
  */
 function evwp_posted_on() {
 ?>
-	<p class="entry-meta">
-		<small>
+	<p class="entry-meta small">
 		<span class="entry-author"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><?php the_author_posts_link(); ?></span>
 		<span class="entry-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><?php id_date_link(); ?></span>
 		<span class="entry-categ"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><?php the_category( ', ' ); ?></span>
 		<span class="entry-comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><?php evwp_comments_link(); ?></span>
 		<?php evwp_edit_link( 'post' ); ?>
-		</small>
 	</p><!-- .entry-meta -->
 <?php
 }
@@ -117,7 +115,7 @@ function evwp_excerpt_more() {
 	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ), get_the_title( get_the_ID() ) )
+		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ID_THEME_NAME' ), get_the_title( get_the_ID() ) )
 	);
 	return ' &hellip; ' . $link;
 }

@@ -12,20 +12,20 @@
 
 // Media Alignments -----------------------------------------------------------
 .alignnone {
-    margin: 0.5em 0;
+    margin: $spacing-inc 0;
 }
 
 .alignright {
     @extend .pull-right;
-    margin: 0.5em 0 1em 1em;
+    margin: 0 0 $spacing-inc $line-height-computed;
 }
 
 .alignleft {
     @extend .pull-left;
-    margin: 0.5em 1em 1em 0;
+    margin: 0 $line-height-computed $spacing-inc 0;
 }
 
 .aligncenter {
     @extend .center-block;
-    margin: 0.5em auto;
+    margin: 0 auto $spacing-inc;
 }
