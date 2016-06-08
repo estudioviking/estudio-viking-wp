@@ -47,6 +47,12 @@ if ( ! function_exists( 'evwp_setup' ) ) :
  * @since 1.0.0
  */
 function evwp_setup() {
+	global $content_width;
+	
+	if ( !isset( $content_width ) ) {
+		$content_width = 698;
+	}
+
 	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
