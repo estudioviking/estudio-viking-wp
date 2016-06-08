@@ -140,7 +140,7 @@ function get_post_thumbnail_meta( $thumb_id, $meta ) {
  */
 function id_date_link( $sep = null, $echo = true ) {
 	$sep		= ( empty( $sep ) ) ? __( 'of' ) : $sep;
-	$str_title	= __( 'Posts of %s', ID_THEME_NAME );
+	$str_title	= __( 'Posts of %s', 'evwp' );
 	$link_str	= '<a href="%s" title="%s" rel="bookmark">%s</a>';
 
 	$y			= get_the_time( 'Y' );

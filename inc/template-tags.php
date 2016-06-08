@@ -28,7 +28,7 @@ function evwp_edit_link( $type, $tag = 'span' ) {
 	if ( is_string( $tag ) && in_array( $tag, $allowed_tags ) ) {
 		if ( $type = 'post' ) {
 			edit_post_link(
-				__( 'Edit', ID_THEME_NAME ),
+				__( 'Edit', 'evwp' ),
 				'<' . $tag . ' class="edit-link"><span class="glyphicon glyphicon-pencil"></span>',
 				'</' . $tag . '>'
 			);
@@ -48,9 +48,9 @@ if ( ! function_exists( 'evwp_comments_link' ) ) :
 function evwp_comments_link() {
 	if ( comments_open( get_the_ID() ) )
 		comments_popup_link(
-			__( 'Leave your thoughts', ID_THEME_NAME ),
-			__( '1 comment', ID_THEME_NAME ),
-			__( '% comments', ID_THEME_NAME )
+			__( 'Leave your thoughts', 'evwp' ),
+			__( '1 comment', 'evwp' ),
+			__( '% comments', 'evwp' )
 		);
 }
 endif;
@@ -115,7 +115,7 @@ function evwp_excerpt_more() {
 	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ID_THEME_NAME' ), get_the_title( get_the_ID() ) )
+		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'evwp' ), get_the_title( get_the_ID() ) )
 	);
 	return ' &hellip; ' . $link;
 }
@@ -131,28 +131,28 @@ function evwp_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', ID_THEME_NAME ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'evwp' ) );
 		if ( $categories_list && evwp_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', ID_THEME_NAME ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'evwp' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', ID_THEME_NAME ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'evwp' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', ID_THEME_NAME ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'evwp' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', ID_THEME_NAME ), esc_html__( '1 Comment', ID_THEME_NAME ), esc_html__( '% Comments', ID_THEME_NAME ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'evwp' ), esc_html__( '1 Comment', 'evwp' ), esc_html__( '% Comments', 'evwp' ) );
 		echo '</span>';
 	}
 
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', ID_THEME_NAME ),
+			esc_html__( 'Edit %s', 'evwp' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',

@@ -32,7 +32,7 @@
 			<?php
 				the_content( sprintf(
 					/* translators: %s: Name of current post. */
-					__( 'Continue reading', ID_THEME_NAME ) . ' %s <span class="meta-nav">&hellip;</span>',
+					__( 'Continue reading', 'evwp' ) . ' %s <span class="meta-nav">&hellip;</span>',
 					the_title( '<span class="sr-only sr-only-focusable">"', '"</span>', false )
 				) );
 			?>
@@ -40,7 +40,7 @@
 			<div class="page-links">
 				<?php
 					wp_link_pages( array(
-						'before' => '<ul class="pager"><li class="disabled"><span class="page-links-title">' . esc_html__( 'Pages:', ID_THEME_NAME ) . '</span></li>',
+						'before' => '<ul class="pager"><li class="disabled"><span class="page-links-title">' . esc_html__( 'Pages:', 'evwp' ) . '</span></li>',
 						'after'  => '</ul>',
 					) );
 				?>

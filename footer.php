@@ -65,11 +65,11 @@
 						'<span class="site-title"><a href="' .
 						esc_url( home_url( '/' ) ) . '" rel="home">' .
 						bloginfo( 'name', 'display' ) . '</a></span>',
-						__( 'Powered by', ID_THEME_NAME ),
+						__( 'Powered by', 'evwp' ),
 						sprintf( '<a href="%s" rel="nofollow" target="_blank">%s</a>',
 							'https://github.com/id-design/',
 							'ID Design' ),
-						__( 'on', ID_THEME_NAME ),
+						__( 'on', 'evwp' ),
 						sprintf( '<a href="%s" rel="nofollow" target="_blank">%s</a>',
 							'http://wordpress.org/',
 							'WordPress' )

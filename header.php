@@ -27,9 +27,9 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a id="skip-link" class="sr-only sr-only-focusable" href="#content" title="<?php esc_attr_e( 'Skip to content', ID_THEME_NAME ); ?>">
+	<a id="skip-link" class="sr-only sr-only-focusable" href="#content" title="<?php esc_attr_e( 'Skip to content', 'evwp' ); ?>">
 		<div class="container">
-			<span class="skip-link-text"><?php _e( 'Skip to content', ID_THEME_NAME ); ?></span>
+			<span class="skip-link-text"><?php _e( 'Skip to content', 'evwp' ); ?></span>
 		</div>
 	</a>
 
@@ -37,7 +37,7 @@
 		<header id="header" class="container" role="banner">
 			<hgroup id="brand" class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu-nav" aria-controls="navbar">
-					<span class="sr-only"><?php _e( 'Click on the button to display the menu.', ID_THEME_NAME ); ?></span>
+					<span class="sr-only"><?php _e( 'Click on the button to display the menu.', 'evwp' ); ?></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -45,7 +45,7 @@
 				
 				<div id="header-txt">
 					<?php if ( is_home() || is_front_page() ) : ?>
-						<h1 id="name"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php _e( 'Go to home page?', ID_THEME_NAME ); ?>" rel="home"><span><?php bloginfo( 'name' ); ?></span></a></h1>
+						<h1 id="name"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php _e( 'Go to home page?', 'evwp' ); ?>" rel="home"><span><?php bloginfo( 'name' ); ?></span></a></h1>
 						<h2 id="desc" class="sr-only sr-only-focusable"><?php bloginfo( 'description' ); ?></h2>
 					<?php else : ?>
 						<p id="name" class="h1"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></p>
@@ -69,12 +69,12 @@
 				?>
 				<form id="navbar-search-form" class="navbar-form navbar-right" method="get" action="<?php echo home_url( '/' ); ?>" role="search">
 					<div class="form-group">
-						<label for="s" class="control-label sr-only"><?php _e( 'Search', ID_THEME_NAME ); ?></label>
+						<label for="s" class="control-label sr-only"><?php _e( 'Search', 'evwp' ); ?></label>
 						<div class="input-group">
-							<input class="form-control" type="search" name="s" placeholder="<?php _e( 'Search', ID_THEME_NAME ); ?>">
+							<input class="form-control" type="search" name="s" placeholder="<?php _e( 'Search', 'evwp' ); ?>">
 							<span class="input-group-btn">
 								<button class="btn btn-default" type="submit" role="button">
-									<span class="sr-only"><?php _e( 'Search', ID_THEME_NAME ); ?></span> <span class="glyphicon glyphicon-search"></span>
+									<span class="sr-only"><?php _e( 'Search', 'evwp' ); ?></span> <span class="glyphicon glyphicon-search"></span>
 								</button>
 							</span>
 						</div>

@@ -65,8 +65,8 @@ function wpbs_paginate_links( $args = '' ) {
 		'current'				=> $current,
 		'show_all'				=> false,
 		'prev_next'				=> true,
-		'prev_text'				=> '<i class="glyphicon glyphicon-chevron-left"></i> <span class="sr-only sr-only-focusable">' . __( 'Previous', ID_THEME_NAME ) . '</span>',
-		'next_text'				=> '<span class="sr-only sr-only-focusable">' . __( 'Next', ID_THEME_NAME ) . '</span> <i class="glyphicon glyphicon-chevron-right"></i>',
+		'prev_text'				=> '<i class="glyphicon glyphicon-chevron-left"></i> <span class="sr-only sr-only-focusable">' . __( 'Previous', 'evwp' ) . '</span>',
+		'next_text'				=> '<span class="sr-only sr-only-focusable">' . __( 'Next', 'evwp' ) . '</span> <i class="glyphicon glyphicon-chevron-right"></i>',
 		'end_size'				=> 1,
 		'mid_size'				=> 2,
 		'type'					=> 'pagination',
@@ -74,7 +74,7 @@ function wpbs_paginate_links( $args = '' ) {
 		'add_fragment'			=> '',
 		'pagination_id'			=> '',
 		'pagination_class'		=> '',
-		'before_page_number'	=> '<span class="sr-only sr-only-focusable">' . __( 'Page', ID_THEME_NAME ) . '</span> ',
+		'before_page_number'	=> '<span class="sr-only sr-only-focusable">' . __( 'Page', 'evwp' ) . '</span> ',
 		'after_page_number'		=> ''
 	);
 
@@ -112,9 +112,9 @@ function wpbs_paginate_links( $args = '' ) {
 			 *
 			 * @param string $link The paginated link URL.
 			 */
-			$page_links[] = '<li class="previous"><a href="' . esc_url( apply_filters( 'paginate_links', $link ) ) . '" title="' . __( 'Previous page', ID_THEME_NAME) . '">' . $args['prev_text'] . '</a></li>';
+			$page_links[] = '<li class="previous"><a href="' . esc_url( apply_filters( 'paginate_links', $link ) ) . '" title="' . __( 'Previous page', 'evwp') . '">' . $args['prev_text'] . '</a></li>';
 		else :
-			$page_links[] = '<li class="previous disabled"><span title="' . __( 'Previous page', ID_THEME_NAME) . '">' . $args['prev_text'] . '</span></li>';
+			$page_links[] = '<li class="previous disabled"><span title="' . __( 'Previous page', 'evwp') . '">' . $args['prev_text'] . '</span></li>';
 		endif;
 	endif;
 	
@@ -132,7 +132,7 @@ function wpbs_paginate_links( $args = '' ) {
 
 				/** This filter is documented in wp-includes/general-template.php */
 				$page_links[] = '<li>' .
-					sprintf( __( '<a href="%1$s" title="Go to page %2$d">%3$s%2$d%4$s</a>', ID_THEME_NAME ),
+					sprintf( __( '<a href="%1$s" title="Go to page %2$d">%3$s%2$d%4$s</a>', 'evwp' ),
 						esc_url( apply_filters( 'paginate_links', $link ) ), number_format_i18n( $n ), $args['before_page_number'], $args['after_page_number'] ) .
 					'</li>';
 				$dots = true;
@@ -152,9 +152,9 @@ function wpbs_paginate_links( $args = '' ) {
 			$link .= $args['add_fragment'];
 	
 			/** This filter is documented in wp-includes/general-template.php */
-			$page_links[] = '<li class="next"><a href="' . esc_url( apply_filters( 'paginate_links', $link ) ) . '" title="' . __( 'Next page', ID_THEME_NAME) . '">' . $args['next_text'] . '</a></li>';
+			$page_links[] = '<li class="next"><a href="' . esc_url( apply_filters( 'paginate_links', $link ) ) . '" title="' . __( 'Next page', 'evwp') . '">' . $args['next_text'] . '</a></li>';
 		else :
-			$page_links[] = '<li class="next disabled"><span title="' . __( 'Next page', ID_THEME_NAME) . '">' . $args['next_text'] . '</span></li>';
+			$page_links[] = '<li class="next disabled"><span title="' . __( 'Next page', 'evwp') . '">' . $args['next_text'] . '</span></li>';
 		endif;
 	endif;
 	
@@ -236,7 +236,7 @@ function wpbs_pagination_links( $args = array() ) {
 			'format'				=> '',
 			'total'					=> $max_page,
 			'current'				=> $page,
-			'screen_reader_text'	=> __( 'Comments navigation', ID_THEME_NAME ),
+			'screen_reader_text'	=> __( 'Comments navigation', 'evwp' ),
 			'add_fragment'			=> '#comments'
 		);
 		if ( $wp_rewrite->using_permalinks() )
@@ -279,7 +279,7 @@ function wpbs_navigation_markup( $links, $args = array() ) {
 		'container_id'			=> '',
 		'container_class'		=> '',
 		'div_class'				=> 'nav-links',
-		'screen_reader_text'	=> __( 'Posts navigation', ID_THEME_NAME ),
+		'screen_reader_text'	=> __( 'Posts navigation', 'evwp' ),
 	) );
 	
 	$output = '';
@@ -334,7 +334,7 @@ function wpbs_post_navigation( $args = array() ) {
 		'container_class'		=> 'post-navigation',
 		'prev_text'				=> '%title',
 		'next_text'				=> '%title',
-		'screen_reader_text'	=> __( 'Posts navigation', ID_THEME_NAME ),
+		'screen_reader_text'	=> __( 'Posts navigation', 'evwp' ),
 		'echo'					=> true
 	) );
 	
@@ -392,7 +392,7 @@ function wpbs_comments_loop( $comment, $args, $depth ) {
 		case 'trackback' :
 			?>
 <li class="post pingback">
-	<p><?php _e( 'Pingback:', ID_THEME_NAME ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', ID_THEME_NAME ), '<span class="edit-link">', '</span>' ); ?></p>
+	<p><?php _e( 'Pingback:', 'evwp' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'evwp' ), '<span class="edit-link">', '</span>' ); ?></p>
 			<?php
 			break;
 		default :
@@ -410,22 +410,22 @@ function wpbs_comments_loop( $comment, $args, $depth ) {
 						$author_link = ( get_comment_author() === get_the_author() ) ? '<span class="glyphicon glyphicon-user"></span> ' . get_comment_author_link() : get_comment_author_link();
 						printf( '<b class="fn">%1$s</b><br />%2$s <a href="%3$s"><time datetime="%4$s" title="%5$s">%6$s %7$s %8$s</time></a> %9$s',
 							$author_link,
-							__( 'In', ID_THEME_NAME ),
+							__( 'In', 'evwp' ),
 							esc_url( get_comment_link( $comment->comment_ID ) ),
 							get_comment_time( 'c' ),
 							get_comment_time( 'l, ' . get_option( 'date_format' ) . ', H:i' ),
 							get_comment_date(),
-							__( 'at', ID_THEME_NAME ),
+							__( 'at', 'evwp' ),
 							get_comment_time(),
-							__( '<span class="says">said:</span>', ID_THEME_NAME )
+							__( '<span class="says">said:</span>', 'evwp' )
 						); ?>
 				</div>
-				<?php edit_comment_link( __( 'Edit', ID_THEME_NAME ), '<span class="edit-link"><span class="glyphicon glyphicon-pencil"></span> ', '</span>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'evwp' ), '<span class="edit-link"><span class="glyphicon glyphicon-pencil"></span> ', '</span>' ); ?>
 				<div class="clearfix"></div>
 			</div><!-- .comment-author.vcard -->
 
 			<?php if ( $comment->comment_approved == '0' ) : ?>
-				<div class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', ID_THEME_NAME ); ?></div>
+				<div class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'evwp' ); ?></div>
 			<?php endif; ?>
 		</footer><!-- .comment-meta -->
 		
@@ -434,7 +434,7 @@ function wpbs_comments_loop( $comment, $args, $depth ) {
 			<div class="reply">
 				<?php
 					comment_reply_link( array_merge( $args, array(
-						'reply_text'	=> __( 'Respond', ID_THEME_NAME ),
+						'reply_text'	=> __( 'Respond', 'evwp' ),
 						'depth'			=> $depth,
 						'max_depth'		=> $args['max_depth'],
 						'panel_type'	=> $panel_type

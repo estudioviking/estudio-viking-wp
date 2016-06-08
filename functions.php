@@ -26,13 +26,6 @@
 
 
 /**
- * Default theme constants
- * ----------------------------------------------------------------------------
- */
-define( 'ID_THEME_NAME', 'evwp' );
-
-
-/**
  * Require ID Core Classes
  * 
  * @since 1.0.0
@@ -58,9 +51,9 @@ function evwp_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Estúdio Viking WP, change 'evwp'
-	 * in 'ID_THEME_NAME' constant value to the name of your theme.
+	 * in 'evwp' constant value to the name of your theme.
 	 */
-    load_theme_textdomain( ID_THEME_NAME, get_template_directory() . '/languages' );
+    load_theme_textdomain( 'evwp', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -83,8 +76,8 @@ function evwp_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', ID_THEME_NAME ),
-		'social'  => __( 'Social Links Menu', ID_THEME_NAME ),
+		'primary' => __( 'Primary Menu', 'evwp' ),
+		'social'  => __( 'Social Links Menu', 'evwp' ),
 	) );
 
 	/**
@@ -159,23 +152,23 @@ function evwp_widgets_init() {
 
 	// Define Content Bottom 1.
 	register_sidebar( wp_parse_args( array(
-		'name'          => __( 'Content Bottom 1', ID_THEME_NAME ),
+		'name'          => __( 'Content Bottom 1', 'evwp' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', ID_THEME_NAME )
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'evwp' )
 	), $defaults ) );
 
 	// Define Content Bottom 2.
 	register_sidebar( wp_parse_args( array(
-		'name'          => __( 'Content Bottom 2', ID_THEME_NAME ),
+		'name'          => __( 'Content Bottom 2', 'evwp' ),
 		'id'            => 'sidebar-2',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', ID_THEME_NAME )
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'evwp' )
 	), $defaults ) );
 
 	// Define Content Bottom 3.
 	register_sidebar( wp_parse_args( array(
-		'name'          => __( 'Content Bottom 3', ID_THEME_NAME ),
+		'name'          => __( 'Content Bottom 3', 'evwp' ),
 		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears at the bottom of the content on posts and pages.', ID_THEME_NAME )
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'evwp' )
 	), $defaults ) );
 }
 add_action( 'widgets_init', 'evwp_widgets_init' );
